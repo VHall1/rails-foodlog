@@ -1,0 +1,42 @@
+<section class="hero is-link is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to root_path, class: "navbar-item" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" stroke-width="2"><g stroke-width="2" transform="translate(0, 0)"><path d="M1,23H31a0,0,0,0,1,0,0v2a2,2,0,0,1-2,2H3a2,2,0,0,1-2-2V23A0,0,0,0,1,1,23Z" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" stroke-linejoin="miter"></path> <path d="M3,5H29a2,2,0,0,1,2,2V9a0,0,0,0,1,0,0H1A0,0,0,0,1,1,9V7A2,2,0,0,1,3,5Z" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" stroke-linejoin="miter"></path> <path d="M2,15l2.126-1.442a3.426,3.426,0,0,1,3.748,0l1.252.849a3.43,3.43,0,0,0,3.748,0l1.252-.849a3.426,3.426,0,0,1,3.748,0l1.252.849a3.43,3.43,0,0,0,3.748,0l1.252-.849a3.426,3.426,0,0,1,3.748,0L30,15" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" data-color="color-2" stroke-linejoin="miter"></path> <line x1="1" y1="19" x2="31" y2="19" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" data-color="color-2" stroke-linejoin="miter"></line></g></svg>
+            <span class="has-text-weight-bold is-size-4 ml-4">
+              Foodlog
+            </span>
+          <% end %>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+              <%= link_to "Create new entry", new_entry_path, class: "button is-success" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        <% if content_for(:title) %>
+          <%= yield :title %>
+        <% else %>
+          Foodlog
+        <% end %>
+      </p>
+    </div>
+  </div>
+</section>
